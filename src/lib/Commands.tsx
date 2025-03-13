@@ -197,12 +197,12 @@ export function CommandsPalette({
                 <CommandItem href="https://github.com/alexngyn">
                   GitHub
                 </CommandItem>
-                <CommandItem href="https://linkedin.com/in/alexngyn">
+                {/* <CommandItem href="https://linkedin.com/in/alexngyn">
                   Linkedin
                 </CommandItem>
                 <CommandItem href="https://drive.google.com/file/d/1FJeWMMiz36nB4wnIYGb1PmF0TivBkPGy/view?usp=sharing">
                   Curriculum Vitae (CV)
-                </CommandItem>
+                </CommandItem> */}
                 <CommandItem href="mailto:dnguyen27@ssis.edu.vn">
                   Contact
                 </CommandItem>
