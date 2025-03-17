@@ -3,77 +3,16 @@ title: "Summer At University of Southern California"
 date: "2024-07-13"
 ---
 
-## Discover Engineering at USC
 
-Leant New scopes of engineering - 8 fields- 
-
-Aerospace -things in common with mechanical. Build rockets- aerodynamics- use of models to predict. Learning teamwork of 5 . rocket went pretty high. 
-
-Same team for 4 weeks- assigned- fun. 
-
-Life as a college student- living- USc nice, cooked lots, food expensive. Fun. shopping in supermarket. You cooked pasta and bagels 
-
-Transportation- stayed mainly on campus. Trips to amusement parks and beaches. 4th of july, first time fireworks, baseball game, hotdog. 
-
-First unit electrical- learn about logic gates and how they are the fundamental building blocks of computers and how they are wired together
-
-Bartering glue sticks for planks- 1 plank for 5 glue then got back 1 for 1 same team 
-
-Civil- learn trusses and how they distribute the forces within a bridge 
-Simulate forces online simulator - issue was bridge roof too low, couldn't get bricks high enough 2nd place. 
-
-Material science- guest speakers-materials they were working on stronger materials 
-
-Aerospace-  different as difficult to test as need to launch- new ways to test- spin with string- parachute 2nd floor 
-
-Chem Sci- not taken yet, interesting- molecules- stable states-explosions stoichiometry
-
-Shifts in mindset? 
-Chem is interesting but not sold (too theoretical) - phys science this year with Chem. prefer more hands on or results. 
-Assigned an essay weekly- format called ieee used by engineers 
-Teamwork- assigned on per person per week 
-
-Interactions with leadership- class size 80 - lectures to start the week off- lots of TAs small group. Main prof didnt interact with much- spent time with prof-prefer small class ratio. Maybe ok for some lectures, careful of all lecture style learning. 
-
-City- LA big city- suburb- didint leave the campus. Like the option of city nearby. 
+Discover Engineering at USC for Four Weeks
 
 [Portfolio](https://sites.google.com/view/2024-group-10/week-1)
 
-## Projects
-
-### Circuits
+## Circuits
 
 [Group 10 Week 1 Research Paper](https://onedrive.live.com/edit?id=78FC09600E700DF8!s0caeb7b13bf048f7a55379855e7dba54&resid=78FC09600E700DF8!s0caeb7b13bf048f7a55379855e7dba54&cid=78fc09600e700df8&ithint=file%2Cdocx&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3cvYy83OGZjMDk2MDBlNzAwZGY4L0ViRzNyZ3p3T19kSXBWTjVoVjU5dWxRQlVkSkVnOEJzam1yd3FlV1pJc3FTR0E_ZT1kTGtSR3M)
 
-#### Biomedical Engineering
-
-Biomedical engineering is a multidisciplinary field that applies principles and problem-solving techniques from engineering, biology, and medicine to improve human health and healthcare. It involves the design, development, and maintenance of medical devices, equipment, and software used for medical purposes.
-
-#### Electrical Engineering
-
-Electrical engineering is a branch of engineering that deals with the study and application of electricity, electronics, and electromagnetism. This field encompasses a wide range of sub-disciplines and activities, such as the design and development of electrical systems and components and other electrical infrastructure. 
-
-Series and Parallel Circuits: AND and OR Gates.
-Series Circuit (AND)
-
-This series circuit, composed of two light bulbs and two switches, models an AND gate: both switches need to be closed for the circuit to be closed, and the lightbulbs to be lit. 
-Parallel Circuit (OR)
-
-This parallel circuit, composed of one light bulb and two switches in parallel, models an OR gate: only one of the switches has to be closed for current to flow through a closed loop and power the lightbulb.
-
-#### College Readiness Circuit
-
-Our first project applying what we learned of boolean algebra is the college readiness circuit. This circuit works by:
-
-    Taking in whether you did the SAT and ACT
-
-    Taking in whether you finished Physical Geology and Psychology.
-
-    If you've either taken SAT OR ACT, AND you also have taken either Physical Geology OR Psychology, you are ready for college.
-
-In other words, the circuit uses AND and OR gates to determine if you are ready for college: if you have taken either SAT or ACT, as well as either Physical Geology or Psychology.
-
-#### COVID-19 Detection Circuit
+COVID-19 Detection Circuit
 
 The Project
 
@@ -125,27 +64,59 @@ Conclusion: Error Analysis
 
 In the end, there were two issues that we did not have time to fix. Firstly, we realized at the end that the switches that we got needed to be grounded AND powered through two pins. We originally thought that they were SPDT so we only grounded the switch. Secondly, we realized that our AND logic gate was fluctuating its output because we were using the wrong voltage/power supply. We only had 3 volts of power when the AND gate required around 4-6V.
 
-### Robots
+## Robots
 
 Website: Group 10 Week 2 Research Paper
 [Group 10 Week 2 Research Paper](https://onedrive.live.com/edit?id=78FC09600E700DF8!s21db89178007490db51feec076824095&resid=78FC09600E700DF8!s21db89178007490db51feec076824095&cid=78fc09600e700df8&ithint=file%2Cdocx&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3cvYy83OGZjMDk2MDBlNzAwZGY4L0VSZUoyeUVIZ0ExSnRSX3V3SGFDUUpVQktudkpUTWl3dEswRXpOMl9WdFBpVlE_ZT1SYTFLRDk)
 
-Robotics
-
-Robotics combines electrical and computer engineering to design a robot, a machine that is capable to completing tasks without human intervention. 
-
-Computer Science
-
-Computer science is the study of computer systems, both software and hardware, with an emphasis on software.
-
 VEXIQ Robot Simulation
+
+``` cpp
+void turnRight (int angle) {
+    int initGyro = getGyroDegrees (port4);
+    if (angle > 0) {
+        setMotorSpeed(rightMotor, -50);
+        while (getGyroDegrees (port4) - initGyro) + angle > 0) {delay (50);}
+    } else {
+        setMotorSpeed (leftMotor, -50);
+        setMotorSpeed (rightMotor, 50);
+        while (getGyroDegrees (port4) - initGyro) + angle < 0) {delay(50);}
+    }
+    setMotorSpeed(leftMotor, 0); 
+    setMotorSpeed(rightMotor, 0);
+}
+
+void checkDirection () {
+    int distances [2] = {0,0}; // left and right distance
+
+    turnRight(-90); 
+    delay(500);
+    distances[0] = getDistanceValue(distanceMM);
+
+    turnRight(180); 
+    delay(500); 
+    distances[1] = getDistanceValue(distanceMM);
+
+    if (distances [0]<=50 && distances [1]<=50) //If both directions are blocked, turn around
+        turnRight(90);
+    else if (distances [0]>=distances [1]) //If left has more space, turn left
+        turnRight(-180);
+        //If right has more space, turn right aka ignore
+}
+
+task main() { while(true) {
+    setMotorSpeed(leftMotor, 100); setMotorSpeed(rightMotor, 100);
+    while(getDistanceValue(distanceMM) > 400) { delay (50); }
+    setMotorSpeed (leftMotor, 0); setMotorSpeed (rightMotor, 0);
+    checkDirection();
+}}
+```
 
 The goal of the VEXIQ simulation is to code the virtual robot to find its way out of a maze autonomously. Our code works by first moving the robot forwards until it is 40 centimeters away from the wall. Then, the robot checks how far the left and right wall is and travels down the farther wall. If there is not enough space on the left and right, the robot goes backwards. Our code is attached underneath.
 
 Tamiya Bot
 
 We built the Tamiya bot with knowledge from programming the VEX robot on our simulation. The components that were used were exactly the same. An optical sensor and motors for moving the robot. Thus, we used the same logic from the VEXIQ code. We have a circuit diagram of the robot on the left.
-
 
 We attached the Arduino and ultrasonic sensor to the Tamiya tank chassis and double motor drive to finish the structure of the robot.
 
@@ -157,17 +128,9 @@ Zumi
 
 The Zumi is an AI powered robot which we trained to recognize obstacles and commands to navigate its way through a building to simulate escaping a building that is on fire. It is able to detect obstacles and navigate through the maze.
 
-### Bridges
+## Bridges
 
 [Group 10 Week 3 Research Paper](https://onedrive.live.com/edit?id=78FC09600E700DF8!s6266e2155fa94e458d0de1560bd80e29&resid=78FC09600E700DF8!s6266e2155fa94e458d0de1560bd80e29&cid=78fc09600e700df8&ithint=file%2Cdocx&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3cvYy83OGZjMDk2MDBlNzAwZGY4L0VSWGlabUtwWDBWT2pRM2hWZ3ZZRGlrQkV2Y3ozakZXVXc2X1FhSVBieXZsN1E_ZT1wMmRWd2o)
-
-Civil Engineering
-
-Civil Engineers design, build, and maintain all public infrastructure and other buildings. They are responsible for making public infrastructure such as bridges and roads safe and operational.
-
-Building Science
-
-Building Science is the research of understanding how to build physical structures, utilizing an understanding of physics, math, material science, and architecture to work with engineers to build structures. 
 
 Friday
 
@@ -199,37 +162,14 @@ Error Analysis
 
 We didn't consider the height of the bricks after stacking 10-12 of them. If we were able to go later in order, we would have seen more configurations to stack the bricks more efficiently in x and z space to conserve vertical space.
 
-### Climate Change & Sustainability 
-(AE, ME, ChE, ISE)
+## Climate Change & Sustainability 
 
 [Group 10 Week 4 Research Paper 1](https://drive.google.com/file/d/1VtdwoJ5PkJLObK8TqaMY4vhw-v95AWA8/view)
 [Group 10 Week 4 Research Paper 2](https://drive.google.com/file/d/1HMCCnmWe4_LSb503nXBff4se0zbXP5Sc/view)
 
-Aerospace Engineering
-
-Aerospace engineering focuses on the design, development, and production of aircrafts, spacecrafts, and other aerodynamic vehicles. Engineers must account for aerodynamics, propulsion, aircraft structure and materials, as well as the safety of the passengers and crew.
-
-Mechanical Engineering
-
-Mechanical engineering focuses on machines, specifically their design, functions, and how they operate with the environment. They work on a large range of mechanical products, from phones and TVs to larger systems like factory assembly lines and automated robots. 
-
-Industrial Engineering
-
-Industrial engineering focuses on optimizing systems and organizations in industry such as streamlining operations, reducing waste, and enhancing performance. Industrial engineers work in various sectors, including manufacturing, logistics, healthcare, and service industries, to improve workflows and resource utilization. 
-
-Chemical Engineering
-
-Chemical engineering uses chemistry to design processes that produce, transform, and transport chemicals, materials, and energy. It involves in the development and optimization of processes for large-scale manufacturing, refining, and material processing, examples include rocket fuel, developing materials, as well as treating sewage water. 
-
-The Drone and CO2 Capture Device
+The Drone
 
 We coded the drone using block codes on the CoDrone RoboLink website. The drone stops at different places and simulates collecting CO2 (beeps and LED turns on), going to another place once done with one place. We had to change the settings of the drone at the beginning to make it stable while hovering.
-
-The CO2 Capture Device
-
-We made a model of the device on TinkerCad. Air enters through the opening via the fan, the carbon is captured by the filter in the middle, and the air exits through the other fan and opening. 
-
-
 
 Elastic Powered Plane
 
@@ -246,7 +186,3 @@ We made a parachute out of a trash bag and tied strings, which were connected to
 The Rocket
 
 Our final rocket launched. We were able to successfully launch on test launch day; however, our parachute did not deploy. We modified the design with a water bottle in the middle that contained the parachute, so the parachute could release easier. However, on official day, we were unable to launch due to problems with the fuel stick. 
-
-Storm Drain Water Treatment
-
-The Design process of Aerospace Engineering
