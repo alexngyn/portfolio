@@ -3,9 +3,9 @@ title: "DIY Keyboard"
 date: "2023-10-04"
 ---
 
-Custom Keyboard: https://sites.google.com/ssis.edu.vn/alex-nguyen/custom-keyboard
-
 In early 2023, I made a small prototype pcb of a macropad using a battam cnc. This was a 4x4 macropad that tried out the concepts of a diode matrix and pcb cutting. It led to 4 header pins that I connected to a breadboard with a Adafruit Bluefruit. It was choosen because it uses the widely supported Atmega32u4-au while having bluetooth. I flashed the microchip with [qmk](https://github.com/flooof/qmk_firmware) and then tested bluetooth connectivity. After that I added knob support using a tc11 rotary encoder and was able to use it to control volume. 
+
+# Custom Keyboard - 2024
 
 I was busy for a while so was not able to work on it but continued the project in April of 2024 as a Passion Project for a class. This time I am building a 42% keyboard, this layout was choosen as it is the smallest with all the letters and important keys. Last time, I used the middle school's cnc which the teacher has made many pcbs on but now in high school the teacher has never made a pcb so I had to learn how to use the machine myself. 
 
@@ -27,3 +27,82 @@ Now I mill the keyboard again with autoleveling. Eeven with the leveling, there 
 
 i have summer break now but i will counitnoe After
 My next steps for this project is a case and then rgb.
+
+[Portfolio](https://sites.google.com/ssis.edu.vn/alex-nguyen/custom-keyboard)
+[Design Report](https://docs.google.com/presentation/d/1z4o9-ibA-ICC6i5AwkUC2IVwwwEGXkuN/embed)
+
+## About
+
+For this project, I wanted to create a keyboard that is made as custom as possible by milling a circuit board and case on a cnc. The main purpose of this project is to create to learn how to use the CNC in order to mill circuit boards and metal, to practice soldering and to learn more about PCB designing while also creating a interesting final product, a hopefully functional keyboard (spoiler: it did not work).
+
+## Criteria
+
+#### Primary
+
+    Custom parts wherever possible
+
+    Has all letters keys
+
+    Computer can read HID values
+
+#### Secondary
+
+    Look pretty according to 3 people in the class
+
+    Sound nice according to Mr Khoa
+
+    Low cost
+
+    Wireless
+
+    RGB
+
+## Build
+
+### Concept 
+
+At the core of the project, I want to make a printed circuit board which is a bunch of tiny wires on a plate of fiberglass that connects the components together such as between the microchip, switches, and the usb port. The microchip can detect when each switch is pressed and will tell the computer that. 
+
+I did a lot of research at the beginning regarding how to design the pcb, particularly the layout of the switches and electrical components. For the layout of the switches, I will place them in a standard QWERTY layout that most people are used to with the keys 19mm apart which is what the keycaps I used specified. I also did research on how the microchip needed to be wired, I learnt that I need components such as capacitors to clean the signals, a quartz chip to clock the chip, and resistors to tell the usb connector how much power the keyboard needs.
+
+I will start off with trying to implement basic features and add more features such as more switches and adding more components throughout my iteration. Throughout the iterations, I also focused on changing the manufacturing method such as adding auto leveling and changing feed rates.
+
+schematic of electrical components
+
+### Iteration 1
+
+For my first iteration, I made a small 2 by 2 macro pad in order to test and learn several things, I learnt how to operate the CNC machine, I learnt the software to design PCBs, and I was able to test the fitment of parts. This iteration had several traces cut off because the bit I used was broken and dull which I will fix by getting new tips. However I got the fitment of the components such as diodes and switches correctly which is a bonus. 
+
+My eventual goal is to make a keyboard that incorporates a microchip however this needs a lot of room for wiring, dual sided pcbs give me double the room to do wiring. I tested dual sided milling in this iteration, the main thing I tested was realigning the pcb after flipping it, I did this successfully by drilling pocket holes into the pcb and base board where I can then use dowels to realign it after.
+
+### mini pcb
+
+metal dowels
+
+### Iteration 2
+
+Now I want to make a bigger version, I chose 42% this time because it is the smallest while meeting the criteria with all the letters. However this keyboard size is still bigger than the area the cnc can cut, what I found out is that, we can cut it once, move the pcb, then cut a second time however the issue is the software, most software only allows me to tile linearly in the y axis which is what most machines allow to push stock into but what I wanted was to rotate the pcb as there was a area on the cnc where the pcb could overhang. I overcame this by manually tiling by drawing rectangles and merging them diferentially which was tedious but worked, and then aligned them when spinning using the previously mentioned dowels.
+
+A issue I encountered was leveling, cutting too deep resulted in rough burrs and broken paths because the V-shaped bit widens as it goes deeper, when I set it too high, only half of the pcb gets cut. Through experimentation, I discovered that a cutting depth of 0.06 mm create the best results. However, this depth is not achievable on larger PCBs because of variations in the surface level, leading to incomplete traces in some areas. I knew that most 3d printers also have this issue and they solve it by probing multiple points. My initial idea was to buy a dial indicator to measure the height of the pcb at various points manual and then put that into a algorithm to modify my gcode. I then realized that the CNC has a free input port on the controller board which I wired to the stock and the tip, so that the tip will lower until it is electrically connected to the pcb which the software can recognize as the zero in Y axis at that point, it repeats this at many points to get a height map and then uses the bi-linear interpolation algorithm to compensate in the g-code / movements. 
+
+dual-sided cutting pathes
+
+cutting the second path
+
+### Iteration 3
+
+In this iteration, I tested the autoprobing and to a certain degree it was able to compensate for the non-flatness but it could not compensate for flex the pcb had, it bent upwards at the middle and could move up and down. This is typically resolved by using double sided tape however I was already using this and it did not work, I will try fixing this with finding stronger tape and also add a dab of glue in the middle.
+
+Another issue I had was some of the drill bits kept breaking, I was running the CNC with a speed of 200mm/s, which caused a broken bit but when I reduced the speed to 100mm/s still resulted in breakage, which was puzzling at first. After research, I discovered that running the CNC too slowly could cause excess friction and heat which causes the bit to snap, this is because the bit scrapes on the stock rather than cuts the PCB and pulling chips away. This led me to try a higher speed of 400mm/s, which made sure the chips it cuts are big and the bit does not break, I also made sure to keep the bit lubricated when it was drilling because I was afraid it might still heat up after drilling many holes.
+
+milling pathes
+
+drilling holes
+
+## Reflection
+
+Although I was unable to produce a functional keyboard and meet most of the criteria because of the given time frame, the keyboard did not have a case which makes it very hard to use and it the components are not soldered yet make the keyboard not able to interact with the computer.
+
+However, this process taught me a lot. I learnt a lot about CNCs, particularly about of depth control, feed rates, and control software. This knowledge will be helpful for my future attempts at PCB creation. 
+
+If I did this again, I would have tried to create something smaller such as a 12-key macro pad as creating a full keyboard in the time frame given was very ambitious. If I was given more time, I would go on to my next step of soldering components to make the PCB be able to connect to a computer, then I would mill the case to make it look and sound nicer, lastly I would add functionality such as rgb and wireless.
