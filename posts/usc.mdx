@@ -3,9 +3,7 @@ title: "Summer At University of Southern California"
 date: "2024-07-13"
 ---
 
-https://sites.google.com/view/2024-group-10/week-1
-
-Discover Engineering at USC
+## Discover Engineering at USC
 
 Leant New scopes of engineering - 8 fields- 
 
@@ -38,3 +36,217 @@ Teamwork- assigned on per person per week
 Interactions with leadership- class size 80 - lectures to start the week off- lots of TAs small group. Main prof didnt interact with much- spent time with prof-prefer small class ratio. Maybe ok for some lectures, careful of all lecture style learning. 
 
 City- LA big city- suburb- didint leave the campus. Like the option of city nearby. 
+
+[Portfolio](https://sites.google.com/view/2024-group-10/week-1)
+
+## Projects
+
+### Circuits
+
+[Group 10 Week 1 Research Paper](https://onedrive.live.com/edit?id=78FC09600E700DF8!s0caeb7b13bf048f7a55379855e7dba54&resid=78FC09600E700DF8!s0caeb7b13bf048f7a55379855e7dba54&cid=78fc09600e700df8&ithint=file%2Cdocx&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3cvYy83OGZjMDk2MDBlNzAwZGY4L0ViRzNyZ3p3T19kSXBWTjVoVjU5dWxRQlVkSkVnOEJzam1yd3FlV1pJc3FTR0E_ZT1kTGtSR3M)
+
+#### Biomedical Engineering
+
+Biomedical engineering is a multidisciplinary field that applies principles and problem-solving techniques from engineering, biology, and medicine to improve human health and healthcare. It involves the design, development, and maintenance of medical devices, equipment, and software used for medical purposes.
+
+#### Electrical Engineering
+
+Electrical engineering is a branch of engineering that deals with the study and application of electricity, electronics, and electromagnetism. This field encompasses a wide range of sub-disciplines and activities, such as the design and development of electrical systems and components and other electrical infrastructure. 
+
+Series and Parallel Circuits: AND and OR Gates.
+Series Circuit (AND)
+
+This series circuit, composed of two light bulbs and two switches, models an AND gate: both switches need to be closed for the circuit to be closed, and the lightbulbs to be lit. 
+Parallel Circuit (OR)
+
+This parallel circuit, composed of one light bulb and two switches in parallel, models an OR gate: only one of the switches has to be closed for current to flow through a closed loop and power the lightbulb.
+
+#### College Readiness Circuit
+
+Our first project applying what we learned of boolean algebra is the college readiness circuit. This circuit works by:
+
+    Taking in whether you did the SAT and ACT
+
+    Taking in whether you finished Physical Geology and Psychology.
+
+    If you've either taken SAT OR ACT, AND you also have taken either Physical Geology OR Psychology, you are ready for college.
+
+In other words, the circuit uses AND and OR gates to determine if you are ready for college: if you have taken either SAT or ACT, as well as either Physical Geology or Psychology.
+
+#### COVID-19 Detection Circuit
+
+The Project
+
+This circuit is used to detect COVID-19 based on three symptoms: coughing, temperature, and O2 levels. 
+
+    If no symptoms are detected, the green light should be lit.
+
+    If one symptom is detected, the yellow light should be lit.
+
+    If two symptoms are detected, the red light should be lit.
+
+    If all three symptoms are detected, the alarm should sound.
+
+The circuit uses various logic gates to determine how many symptoms are present and utilizes that information to power the lights and alarm correctly. We also added flip-flops that are regulated by a timer to make our circuit read information at a set interval. This is because the circuit should not be checking for symptoms all the time as there are other temporary causes to the symptoms. For example, one's body may raise in temperature due to exercise. Without the flip-flops, the circuit may read this as a sign of Covid-19. With the addition of flip-flops, the user just has to avoid these possible causes at the intervals when the circuit reads their vitals.
+
+Overall Design Process:
+
+We decided to build the different components of the circuit (alarm, clock, logic) separately and then combine them together in the end. 
+
+Logic Circuit:
+
+The logic circuit was planned out on the whiteboard and comprised of AND, NOT, OR, and XOR gates. The first design didn't work because the yellow and red lights were turning on together in strictly yellow cases. We then re-designed the red light cases in Tinkercad and made sure that it worked before re-building it.
+
+Now came the biggest challenge in creating our logic circuit. Even though all the logic worked out in the Tinkercad, it didn't on our bread board. Through systematic debugging the logic gates, we found that one of the logic gates was inconsistent and was fluctuating between 0 and 1. 
+
+Clock circuit:
+
+The first attempt for the clock circuit resulted in the testing LED shining momentarily before dimming, with no cycle. We concluded that something must have gone wrong with the wiring, so we decided to test the circuit on Tinkercad. 
+
+The first attempt in Tinkercad resulted in a cycle time of 3 seconds, which was too short, so we replaced the 5uF capacitor with a 10uF capacitor, resulting in better cycle time of around 6.5 seconds. With a more concrete visualization of our idea, we were able reliably and physically recreate the circuit with the LED turning on and off every 3.25 or so seconds, which we could then attach to the flipflops on the logic circuit.
+
+Alarm circuit:
+
+The alarm circuit was very straight forward because we had a the blueprint for it. This was the one part of the circuit that we nailed in the first try. :)
+
+The Alarm Circuit
+
+This section of the circuit is the alarm. It uses a 555-timing chip to control the speaker and produce sound of different frequencies.
+The Clock Circuit
+
+The clock circuit also uses a 555-timing chip to give a signal to the flip flops to check if there were any changes to the signals they receive and change the lights and alarm accordingly. 
+The Logic Circuit
+
+These combinations of logic gates allow us to correctly pass a signal to the other parts of the circuit and power the lights and alarm according to the conditions. 
+
+Unfortunately, the physical logic circuit did not work. 
+
+Conclusion: Error Analysis
+
+In the end, there were two issues that we did not have time to fix. Firstly, we realized at the end that the switches that we got needed to be grounded AND powered through two pins. We originally thought that they were SPDT so we only grounded the switch. Secondly, we realized that our AND logic gate was fluctuating its output because we were using the wrong voltage/power supply. We only had 3 volts of power when the AND gate required around 4-6V.
+
+### Robots
+
+Website: Group 10 Week 2 Research Paper
+[Group 10 Week 2 Research Paper](https://onedrive.live.com/edit?id=78FC09600E700DF8!s21db89178007490db51feec076824095&resid=78FC09600E700DF8!s21db89178007490db51feec076824095&cid=78fc09600e700df8&ithint=file%2Cdocx&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3cvYy83OGZjMDk2MDBlNzAwZGY4L0VSZUoyeUVIZ0ExSnRSX3V3SGFDUUpVQktudkpUTWl3dEswRXpOMl9WdFBpVlE_ZT1SYTFLRDk)
+
+Robotics
+
+Robotics combines electrical and computer engineering to design a robot, a machine that is capable to completing tasks without human intervention. 
+
+Computer Science
+
+Computer science is the study of computer systems, both software and hardware, with an emphasis on software.
+
+VEXIQ Robot Simulation
+
+The goal of the VEXIQ simulation is to code the virtual robot to find its way out of a maze autonomously. Our code works by first moving the robot forwards until it is 40 centimeters away from the wall. Then, the robot checks how far the left and right wall is and travels down the farther wall. If there is not enough space on the left and right, the robot goes backwards. Our code is attached underneath.
+
+Tamiya Bot
+
+We built the Tamiya bot with knowledge from programming the VEX robot on our simulation. The components that were used were exactly the same. An optical sensor and motors for moving the robot. Thus, we used the same logic from the VEXIQ code. We have a circuit diagram of the robot on the left.
+
+
+We attached the Arduino and ultrasonic sensor to the Tamiya tank chassis and double motor drive to finish the structure of the robot.
+
+Red Bot
+
+The Red Bot is a line following robot built with two motors and three line sensors. We were given a completely built robot so we just had to code the sensors to follow the line correctly. The three line sensors are placed on the left, middle, and right of the robot. When the line turns, the middle line sensor loses track of the line and one of the left or right line sensors will sense the line. If the left sensor senses the line, the robot re-orients itself by turning left. If the right sensor senses the line, the robot re-orients itself by turning right. Video of it working ----->
+
+Zumi
+
+The Zumi is an AI powered robot which we trained to recognize obstacles and commands to navigate its way through a building to simulate escaping a building that is on fire. It is able to detect obstacles and navigate through the maze.
+
+### Bridges
+
+[Group 10 Week 3 Research Paper](https://onedrive.live.com/edit?id=78FC09600E700DF8!s6266e2155fa94e458d0de1560bd80e29&resid=78FC09600E700DF8!s6266e2155fa94e458d0de1560bd80e29&cid=78fc09600e700df8&ithint=file%2Cdocx&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3cvYy83OGZjMDk2MDBlNzAwZGY4L0VSWGlabUtwWDBWT2pRM2hWZ3ZZRGlrQkV2Y3ozakZXVXc2X1FhSVBieXZsN1E_ZT1wMmRWd2o)
+
+Civil Engineering
+
+Civil Engineers design, build, and maintain all public infrastructure and other buildings. They are responsible for making public infrastructure such as bridges and roads safe and operational.
+
+Building Science
+
+Building Science is the research of understanding how to build physical structures, utilizing an understanding of physics, math, material science, and architecture to work with engineers to build structures. 
+
+Friday
+
+we first drew out possible concepts on a whiteboard and removed several designs such as catilever for being too complicated, suspestion would be very hard because we cant get a bent cable. 
+
+we had to chose was between cable strung and Pennsylvania / Petit Truss so we setched both options out in 8mm:6in ratio. we choose the petit in the end because we were concerned how well cable strung would work with balsa wood as the cable.
+
+Weekend
+
+we then designed the bridge in cad (solid works which Alex is used to) to plan out what we want to build. 
+
+we then simulated the design using finite element analysis (using ansys) and found out it there exists a weak point in the bridge so we added more supports to it. after that change, the simulation says the bridge should hold 1000N+ however this does not take into account the strength of the wood
+
+we then rendered the bridge in keyshot cuz why not
+
+Monday
+
+we started the morning by making a bill of materials then split the task for everyone to cut those lengths, in the afternoon we started glueing and finished the base.
+
+Tuesday
+
+Continued working on the bridge and finished building the base and truss. We also added some supports under the bridge to support the center of the road.
+
+Wednesday
+
+Testing day! 🙏 lord have mercy
+
+Error Analysis
+
+We didn't consider the height of the bricks after stacking 10-12 of them. If we were able to go later in order, we would have seen more configurations to stack the bricks more efficiently in x and z space to conserve vertical space.
+
+### Climate Change & Sustainability 
+(AE, ME, ChE, ISE)
+
+[Group 10 Week 4 Research Paper 1](https://drive.google.com/file/d/1VtdwoJ5PkJLObK8TqaMY4vhw-v95AWA8/view)
+[Group 10 Week 4 Research Paper 2](https://drive.google.com/file/d/1HMCCnmWe4_LSb503nXBff4se0zbXP5Sc/view)
+
+Aerospace Engineering
+
+Aerospace engineering focuses on the design, development, and production of aircrafts, spacecrafts, and other aerodynamic vehicles. Engineers must account for aerodynamics, propulsion, aircraft structure and materials, as well as the safety of the passengers and crew.
+
+Mechanical Engineering
+
+Mechanical engineering focuses on machines, specifically their design, functions, and how they operate with the environment. They work on a large range of mechanical products, from phones and TVs to larger systems like factory assembly lines and automated robots. 
+
+Industrial Engineering
+
+Industrial engineering focuses on optimizing systems and organizations in industry such as streamlining operations, reducing waste, and enhancing performance. Industrial engineers work in various sectors, including manufacturing, logistics, healthcare, and service industries, to improve workflows and resource utilization. 
+
+Chemical Engineering
+
+Chemical engineering uses chemistry to design processes that produce, transform, and transport chemicals, materials, and energy. It involves in the development and optimization of processes for large-scale manufacturing, refining, and material processing, examples include rocket fuel, developing materials, as well as treating sewage water. 
+
+The Drone and CO2 Capture Device
+
+We coded the drone using block codes on the CoDrone RoboLink website. The drone stops at different places and simulates collecting CO2 (beeps and LED turns on), going to another place once done with one place. We had to change the settings of the drone at the beginning to make it stable while hovering.
+
+The CO2 Capture Device
+
+We made a model of the device on TinkerCad. Air enters through the opening via the fan, the carbon is captured by the filter in the middle, and the air exits through the other fan and opening. 
+
+
+
+Elastic Powered Plane
+
+This plane was made by winding up a rubber band to power the motor. We also had to make the sure the wings were tilted at the right angle to provide enough lift for the plane to fly. This took many tries, and in the end our plane flew pretty well. 
+
+Model Rocket
+
+Before building the actual rocket, we did a smaller model which could be launched by blowing. This was to get an idea of the aerodynamics of a rocket as well as test our initial design. 
+
+The Parachute
+
+We made a parachute out of a trash bag and tied strings, which were connected to the data bot. The bot will drop after the rocket falls down, and the parachute will slowly bring it down. 
+
+The Rocket
+
+Our final rocket launched. We were able to successfully launch on test launch day; however, our parachute did not deploy. We modified the design with a water bottle in the middle that contained the parachute, so the parachute could release easier. However, on official day, we were unable to launch due to problems with the fuel stick. 
+
+Storm Drain Water Treatment
+
+The Design process of Aerospace Engineering
