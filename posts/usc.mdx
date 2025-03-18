@@ -19,16 +19,16 @@ date: "2024-07-13"
 
 COVID-19 Detection Circuit
 
+
+<img src="https://media.licdn.com/dms/image/v2/D562DAQGn5jW6P99SXQ/profile-treasury-image-shrink_1280_1280/B56ZVr7MUcGoAU-/0/1741272445431?e=1742922000&v=beta&t=qJRYsoVX2Qq7dv0xAos5cjGjz0-ZZkpVFK7slbtDMqo" width="50%"/> 
+
 The Project
 
 This circuit is used to detect COVID-19 based on three symptoms: coughing, temperature, and O2 levels. 
 
     If no symptoms are detected, the green light should be lit.
-
     If one symptom is detected, the yellow light should be lit.
-
     If two symptoms are detected, the red light should be lit.
-
     If all three symptoms are detected, the alarm should sound.
 
 The circuit uses various logic gates to determine how many symptoms are present and utilizes that information to power the lights and alarm correctly. We also added flip-flops that are regulated by a timer to make our circuit read information at a set interval. This is because the circuit should not be checking for symptoms all the time as there are other temporary causes to the symptoms. For example, one's body may raise in temperature due to exercise. Without the flip-flops, the circuit may read this as a sign of Covid-19. With the addition of flip-flops, the user just has to avoid these possible causes at the intervals when the circuit reads their vitals.
@@ -43,27 +43,29 @@ The logic circuit was planned out on the whiteboard and comprised of AND, NOT, O
 
 Now came the biggest challenge in creating our logic circuit. Even though all the logic worked out in the Tinkercad, it didn't on our bread board. Through systematic debugging the logic gates, we found that one of the logic gates was inconsistent and was fluctuating between 0 and 1. 
 
-Clock circuit:
+These combinations of logic gates allow us to correctly pass a signal to the other parts of the circuit and power the lights and alarm according to the conditions. 
+
+<img src="https://media.discordapp.net/attachments/873151746749366315/1351598369587335269/pp.jpg?ex=67daf592&is=67d9a412&hm=ef0a2ef1c5cf94c8065aec4a57977ee6d57681d3af90159a259cd6cd743a5e70&=&format=webp&width=1718&height=1131" width="49%"/> 
+<img src="https://media.discordapp.net/attachments/873151746749366315/1351598369897709599/IMG_4907.jpg?ex=67daf592&is=67d9a412&hm=bd4e89c63cf83e4191668d86f98ecdca5afee1728a530330ab5c85ae26f15672&=&format=webp&width=1582&height=1423" width="49%" align="right"/> 
+
+The Alarm Circuit
+
+The alarm circuit was very straight forward because we had a the blueprint for it. This was the one part of the circuit that we nailed in the first try. :)
+
+This section of the circuit is the alarm. It uses a 555-timing chip to control the speaker and produce sound of different frequencies.
+
+<img src="https://media.discordapp.net/attachments/873151746749366315/1351598368702337104/Untitled3.jpg?ex=67daf592&is=67d9a412&hm=3989a007fb21b072711b29981c81ba9da02ef6d24398828d1233363f3c7acdad&=&format=webp&width=1896&height=1423" width="49%"/> 
+<img src="https://media.discordapp.net/attachments/873151746749366315/1351598369016905850/media3.png?ex=67daf592&is=67d9a412&hm=7b1b2696a80050490082cc8bbe08f2379d862547abd859effd42fc5a1cfec573&=&format=webp&quality=lossless&width=1604&height=1168" width="49%" align="right"/> 
+
+The Clock Circuit
+
+The clock circuit also uses a 555-timing chip to give a signal to the flip flops to check if there were any changes to the signals they receive and change the lights and alarm accordingly. 
 
 The first attempt for the clock circuit resulted in the testing LED shining momentarily before dimming, with no cycle. We concluded that something must have gone wrong with the wiring, so we decided to test the circuit on Tinkercad. 
 
 The first attempt in Tinkercad resulted in a cycle time of 3 seconds, which was too short, so we replaced the 5uF capacitor with a 10uF capacitor, resulting in better cycle time of around 6.5 seconds. With a more concrete visualization of our idea, we were able reliably and physically recreate the circuit with the LED turning on and off every 3.25 or so seconds, which we could then attach to the flipflops on the logic circuit.
 
-Alarm circuit:
-
-The alarm circuit was very straight forward because we had a the blueprint for it. This was the one part of the circuit that we nailed in the first try. :)
-
-The Alarm Circuit
-
-This section of the circuit is the alarm. It uses a 555-timing chip to control the speaker and produce sound of different frequencies.
-The Clock Circuit
-
-The clock circuit also uses a 555-timing chip to give a signal to the flip flops to check if there were any changes to the signals they receive and change the lights and alarm accordingly. 
-The Logic Circuit
-
-These combinations of logic gates allow us to correctly pass a signal to the other parts of the circuit and power the lights and alarm according to the conditions. 
-
-Unfortunately, the physical logic circuit did not work. 
+<img src="https://media.discordapp.net/attachments/873151746749366315/1351598369264500746/media4.png?ex=67daf592&is=67d9a412&hm=1fda7945aafa11ed612e4870a8a1555ad5c325c1f9c7e78ef7b9a370797382fd&=&format=webp&quality=lossless&width=682&height=897" width="50%"/> 
 
 Conclusion: Error Analysis
 
@@ -117,6 +119,8 @@ task main() { while(true) {
 }}
 ```
 
+https://drive.google.com/file/d/1Js4BmVHGKOsWJ84Ft2kCT1tO9JgAIqSX/view
+
 The goal of the VEXIQ simulation is to code the virtual robot to find its way out of a maze autonomously. Our code works by first moving the robot forwards until it is 40 centimeters away from the wall. Then, the robot checks how far the left and right wall is and travels down the farther wall. If there is not enough space on the left and right, the robot goes backwards. Our code is attached underneath.
 
 Tamiya Bot
@@ -125,11 +129,19 @@ We built the Tamiya bot with knowledge from programming the VEX robot on our sim
 
 We attached the Arduino and ultrasonic sensor to the Tamiya tank chassis and double motor drive to finish the structure of the robot.
 
+<img src="https://media.discordapp.net/attachments/873151746749366315/1351599026272993362/media.jpg?ex=67daf62f&is=67d9a4af&hm=cdafcc654bcf7fe374869608c1a2688c77e4afcadbb58979d3f06b82f7791789&=&format=webp&width=2021&height=1195" width="50%"/> 
+
+https://drive.google.com/file/d/1atGJ7ylXoHDKdEcpLwTRq3J11RwYsawb/view
+
 Red Bot
 
 The Red Bot is a line following robot built with two motors and three line sensors. We were given a completely built robot so we just had to code the sensors to follow the line correctly. The three line sensors are placed on the left, middle, and right of the robot. When the line turns, the middle line sensor loses track of the line and one of the left or right line sensors will sense the line. If the left sensor senses the line, the robot re-orients itself by turning left. If the right sensor senses the line, the robot re-orients itself by turning right. Video of it working ----->
 
+https://drive.google.com/file/d/1hh0mCIJmUfL2anUKQYfuAEPcvFUrcCOZ/view
+
 Zumi
+
+https://drive.google.com/file/d/1os9nf4ERQgemwMjMpkYOU_r9V-fZ4cen/view
 
 The Zumi is an AI powered robot which we trained to recognize obstacles and commands to navigate its way through a building to simulate escaping a building that is on fire. It is able to detect obstacles and navigate through the maze.
 
@@ -140,6 +152,8 @@ The Zumi is an AI powered robot which we trained to recognize obstacles and comm
 Friday
 
 we first drew out possible concepts on a whiteboard and removed several designs such as catilever for being too complicated, suspestion would be very hard because we cant get a bent cable. 
+<img src="https://media.discordapp.net/attachments/873151746749366315/1351599817704607814/media6.jpg?ex=67daf6ec&is=67d9a56c&hm=b6c3be83a4984a14334eeb08e07efe8aadd810a9dd8e3c933f755401ba5c91df&=&format=webp&width=1896&height=1423" width="49%"/> 
+<img src="https://media.discordapp.net/attachments/873151746749366315/1351599818639937678/media3.jpg?ex=67daf6ec&is=67d9a56c&hm=66550b8cbb4c84b0c2b50ead14fcec66b123803dab5a272a6e6b7e1b5511735a&=&format=webp&width=1066&height=1423" width="49%" align="right"/> 
 
 we had to chose was between cable strung and Pennsylvania / Petit Truss so we setched both options out in 8mm:6in ratio. we choose the petit in the end because we were concerned how well cable strung would work with balsa wood as the cable.
 
@@ -147,13 +161,17 @@ Weekend
 
 we then designed the bridge in cad (solid works which Alex is used to) to plan out what we want to build. 
 
-we then simulated the design using finite element analysis (using ansys) and found out it there exists a weak point in the bridge so we added more supports to it. after that change, the simulation says the bridge should hold 1000N+ however this does not take into account the strength of the wood
+<img src="https://media.discordapp.net/attachments/873151746749366315/1351599818182754467/media5.png?ex=67daf6ec&is=67d9a56c&hm=f3f61f397afd990289f3f30d62c59f1c3b0102ab6b6c615617ed574a91186ccb&=&format=webp&quality=lossless&width=1026&height=1421" width="32%"/> 
+<img src="https://media.discordapp.net/attachments/873151746749366315/1351599818958700604/Untitled2.jpg?ex=67daf6ec&is=67d9a56c&hm=ff5a8c11afe928d1e14d591d69d77de8cb68aae9b38a5f4cd9bdf6a80ac9da98&=&format=webp&width=2021&height=1312" width="32%" align="center"/> 
+<img src="https://media.discordapp.net/attachments/873151746749366315/1351599819252174848/Untitled.png?ex=67daf6ec&is=67d9a56c&hm=aed66910823742eeee037f545a6970a2a7efe8df715a718a9f2d0797ddb84726&=&format=webp&quality=lossless&width=1978&height=1156" width="32%" align="right"/> 
+
+we then simulated the design using finite element analysis (using ansys) and found out it there exists a weak point in the bridge so we added more supports to it. after that change, the simulation says the bridge should hold 1000N+ however this does not take into account the strength of the wood joints
 
 we then rendered the bridge in keyshot cuz why not
 
 Monday
 
-we started the morning by making a bill of materials then split the task for everyone to cut those lengths, in the afternoon we started glueing and finished the base.
+we started the morning by making a [bill of materials](https://docs.google.com/spreadsheets/d/15EnYXzY58IRGbP5e7sdhe3ZYu213i_0Csh2f9wUnUnI/edit?gid=0#gid=0) then split the task for everyone to cut those lengths, in the afternoon we started glueing and finished the base.
 
 Tuesday
 
@@ -162,6 +180,8 @@ Continued working on the bridge and finished building the base and truss. We als
 Wednesday
 
 Testing day! 🙏 lord have mercy
+<img src="https://media.licdn.com/dms/image/v2/D562DAQElAaB6Sd29IA/profile-treasury-image-shrink_800_800/B56ZVr7RvBHEAY-/0/1741272456742?e=1742922000&v=beta&t=9uhtBrHvCChbgSN6zdngpw7E_1WkWHytPKZ73Kozdlc" width="50%"/> 
+
 
 Error Analysis
 
@@ -176,18 +196,32 @@ The Drone
 
 We coded the drone using block codes on the CoDrone RoboLink website. The drone stops at different places and simulates collecting CO2 (beeps and LED turns on), going to another place once done with one place. We had to change the settings of the drone at the beginning to make it stable while hovering.
 
+https://drive.google.com/file/d/1fe3NCKpLAKvA9Z5bxt-FqBf31wA7ku0P/view
+
 Elastic Powered Plane
 
 This plane was made by winding up a rubber band to power the motor. We also had to make the sure the wings were tilted at the right angle to provide enough lift for the plane to fly. This took many tries, and in the end our plane flew pretty well. 
 
+https://drive.google.com/file/d/1oVy4GsWXZ6lYNuHYgv3llgdByTb9-KCC/view?t=5
+
 Model Rocket
 
 Before building the actual rocket, we did a smaller model which could be launched by blowing. This was to get an idea of the aerodynamics of a rocket as well as test our initial design. 
+https://drive.google.com/file/d/16xxoTwkVJPc7PzDMrSgfaVZobOpaBy6A/view?t=6
 
 The Parachute
 
 We made a parachute out of a trash bag and tied strings, which were connected to the data bot. The bot will drop after the rocket falls down, and the parachute will slowly bring it down. 
+https://drive.google.com/file/d/18vOGAb_qR3hm2hV7X0R9HRvN6rgsEpR6/view
 
 The Rocket
 
 Our final rocket launched. We were able to successfully launch on test launch day; however, our parachute did not deploy. We modified the design with a water bottle in the middle that contained the parachute, so the parachute could release easier. However, on official day, we were unable to launch due to problems with the fuel stick. 
+
+<video>
+    <source src="https://drive.google.com/uc?export=download&id=15gr8tbPaSF-aVoy7pxNeqVMED2SG5Xoj" type='video/mpeg'>
+</video>
+
+<iframe src="https://drive.google.com/file/d/15gr8tbPaSF-aVoy7pxNeqVMED2SG5Xoj/preview" width="640" height="480" allow="autoplay"></iframe>
+
+https://media.licdn.com/dms/image/v2/D562DAQFwnXUhzuBUkw/profile-treasury-image-shrink_1280_1280/B56ZVr7F21GsAQ-/0/1741272409934?e=1742922000&v=beta&t=vGt40FJFmESYu8WuAx7bqBijSepDo43912EIJtzB9Xs
