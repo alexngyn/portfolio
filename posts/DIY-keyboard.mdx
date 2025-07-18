@@ -4,35 +4,35 @@ date: "2023-10-04"
 img: "https://lh7-rt.googleusercontent.com/slidesz/AGV_vUfHxWjnCUhBxDRtaVakrANgLLUpAlOfH9GFEZXNDavbq5Jamy0gxQjFukcn_MRamfR0PjmDUAYwsT4Y-8btZsMtV6SOzsFbuWTBStIvIqMfSBsTvcMCh7jk7X-1OgjHwg76xYUs7sUD6_AZ4ZTal1QXWCjMxIYpDlgExUxXtkqTWTwHOKRqSYs=s2048?key=Hg3Oh3LOKEzQQ7S-8xvdMA"
 ---
 
-In early 2023, I made a small prototype pcb of a macropad using a battam cnc. This was a 4x4 macropad that tried out the concepts of a diode matrix and pcb cutting. It led to 4 header pins that I connected to a breadboard with a Adafruit Bluefruit. It was choosen because it uses the widely supported Atmega32u4-au while having bluetooth. I flashed the microchip with [qmk](https://github.com/flooof/qmk_firmware) and then tested bluetooth connectivity. After that I added knob support using a tc11 rotary encoder and was able to use it to control volume. 
+## About
+
+For this project, I wanted to create a keyboard that is made as custom as possible by milling a circuit board and case on a cnc. The main purpose of this project is to create to learn how to use the CNC in order to mill circuit boards and metal, to practice soldering and to learn more about PCB designing while also creating a interesting final product, a hopefully functional keyboard.
+
+## Prototype
+
+In early 2023, I made a small prototype pcb of a 2x2 macropad using a Battam cnc. This help me learn the concept of a diode matrix and pcb engraving. It had 4 header pins that I connected to a Adafruit Bluefruit. It was choosen because it uses the widely supported Atmega32u4-au while having bluetooth connectivity. I flashed the microchip with [qmk](https://github.com/flooof/qmk_firmware) and then tested bluetooth connectivity. After that I added knob support using a tc11 rotary encoder and was able to use it to control volume.
 
 # Custom Keyboard - 2024
 
 I was busy for a while so was not able to work on it but continued the project in April of 2024 as a Passion Project for a class. This time I am building a 42% keyboard, this layout was choosen as it is the smallest with all the letters and important keys. Last time, I used the middle school's cnc which the teacher has made many pcbs on but now in high school the teacher has never made a pcb so I had to learn how to use the machine myself. 
 
-I designed the schematic and the pcb in kicad which is a open source software that I am used to and then used flatcam to convert the pcb into  paths for the cnc to follow. I can make the keyboard pcb on a carbide nomad 883 cnc and the case out of sheet aluminum on a omax water jet. My goal was to make it fully custom as a challenge so I had to use a two sided pcb because the pathes were very complicated as I wanted to solder the microchip directly onto the pcb which requres wiring for things such as the clock, usb, and the decopling capacitors. I can use vias which connect the two sides of the pcb where I want although one concern is how long it will take to mount a lot of vias. 
+I designed the schematic and the pcb in kicad which is a open source software that I am used to and then used flatcam to convert the pcb into nc paths for the cnc to follow. I can make the keyboard pcb on a carbide nomad 883 cnc and the case out of sheet aluminum on a omax water jet. 
 
-My initial prototype was to learn to use the software and use the cnc so I made anouther 2x2 macro pad. The bit I was using was bigger then the tolorence I needed so many of the traces were destroyed, I had to buy new tips.
+I had to use a two sided pcb because the pathes were very complicated as I want to attach the microchip directly onto the pcb which requres wiring for things such as the timing clock, usb port, and the decoupling capacitors. I will use vias which connect the two sides of the pcb but one concern is how hard it will take to mount a lot of vias as I plan on using a lot. 
 
-I added more tolorence on a second prootype to compensate for the broken bit while i waited for a new bit to ship, the second iternation also tried doble sided cuting and alignment using dowels. It was a succes as the two sides were alighned perfectly.
+My initial prototype was to learn to use the software and use the cnc so I made another 2x2 macro pad. The bit I was using was bigger then the gap I needed so many of the traces were broken, so I had to buy new thinner tips.
+
+I added more tolorence on a second prootype to compensate for the broken bit while i waited for a new bit to ship, the second iternation also tried double sided cuting and alignment using dowel pins. It was a succes as the two sides were alighned perfectly.
 
 Now I want to make the full size version, the issue is that the cnc is smaller than the pcb I want to cut, in the future I can try cutting the pcb on a 770 tormach once its done setting up but we are having issues with the floor not being level. For now, we can cut it once, move the pcb, then cut a second time however the issue is the software, most software only allows me to tile linearly in the y axis which is what most machines allow to push stock into but what I wanted was to rotate the pcb as there was a area on the cnc where the pcb could overhang. I overcame this by manualy tiling in carbide create by drawing rectangles and merging them differntaly and then aling using the dowels.  
 
 The tiling came out fine but a issue I had was leveling, when I set it too high, only half of the pcb would be cut but then when I went it go deeper, half of the traces were gone and half was fine. This was because the stock pcb was not level. I knew that most 3d printers also have this issue and they solve it by probing multiple points. my initial idea was to buy a dial indicator to mesure the height of the pcb at various points manualy and then put that into a algorythom to modify my gcode. I then realized that the cnc has a free input on the controller which I wired to the stock and the tip so that the tip will lowwer until it is electory connectied to the stock which the software can reconize as the zero at that point, repeat several times and you have autoprobing. There were various software solutions I found.
 
-bCNC – Looked promising but the serial connection consistently failed. Lots of people love it though.
-ChiliPeppr (grbl) - This is a totally great option, however I was looking for a stand alone application.
-CNCjs + kt-ext - This is what I chose 
-
 Now I mill the keyboard again with autoleveling. Eeven with the leveling, there was quite some inconcisteances, it was either the pcb had some flex or the auto leveling was not working. I will so some test of similpy making a squere t test leveling more without messing up big pcb stock.
-
-i have summer break now but i will counitnoe After
-My next steps for this project is a case and then rgb.
 
 [Portfolio](https://sites.google.com/ssis.edu.vn/alex-nguyen/custom-keyboard)
 
 <iframe src="https://docs.google.com/presentation/d/1z4o9-ibA-ICC6i5AwkUC2IVwwwEGXkuN/embed" frameborder="0" width="400" height="240" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-## About
-
-For this project, I wanted to create a keyboard that is made as custom as possible by milling a circuit board and case on a cnc. The main purpose of this project is to create to learn how to use the CNC in order to mill circuit boards and metal, to practice soldering and to learn more about PCB designing while also creating a interesting final product, a hopefully functional keyboard (spoiler: it did not work).
+# Custom Keyboard - 2025
+After a lot of fidling, I realized I might have choosen the wrong option. So I decided to test piece had very low tolrence due to 

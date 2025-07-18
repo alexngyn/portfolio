@@ -5,20 +5,19 @@ date: "2024-07-13"
 
 # Discover Engineering at USC for Four Weeks
 
-4 Week Pre-College Engineering Program
-- Built a Covid symptom tester using logic gates on a breadboard
-- Built a line tracking RedBot to follow the Spa-Francorchamps Circuit
-- Built a 4ft bridge using balsa wood sticks, supporting the maximum capacity of bricks
-- Built a model rocket using solid fuel with working parachutes
+I attended a 4 week Pre-College Summer Program where we explored different fields of engineering. My four biggest projects were:
+- a Covid symptom tester using logic gates on a breadboard
+- a line tracking RedBot to follow the Spa-Francorchamps Circuit
+- a 4ft bridge using balsa wood sticks, supporting a dynamic load of 14 bricks
+- a model rocket using solid fuel with working parachutes
 
 [Portfolio](https://sites.google.com/view/2024-group-10/)
 
 ## Circuits
 
-[Group 10 Week 1 Research Paper](https://onedrive.live.com/edit?id=78FC09600E700DF8!s0caeb7b13bf048f7a55379855e7dba54&resid=78FC09600E700DF8!s0caeb7b13bf048f7a55379855e7dba54&cid=78fc09600e700df8&ithint=file%2Cdocx&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3cvYy83OGZjMDk2MDBlNzAwZGY4L0ViRzNyZ3p3T19kSXBWTjVoVjU5dWxRQlVkSkVnOEJzam1yd3FlV1pJc3FTR0E_ZT1kTGtSR3M)
+[Group 10 Week 1 Research Paper](/src/images/usc/Group%2010%20Week%201%20Research%20Paper.pdf)
 
 COVID-19 Detection Circuit
-
 
 <img src="https://media.licdn.com/dms/image/v2/D562DAQGn5jW6P99SXQ/profile-treasury-image-shrink_1280_1280/B56ZVr7MUcGoAU-/0/1741272445431?e=1742922000&v=beta&t=qJRYsoVX2Qq7dv0xAos5cjGjz0-ZZkpVFK7slbtDMqo" width="50%"/> 
 
@@ -50,9 +49,7 @@ These combinations of logic gates allow us to correctly pass a signal to the oth
 
 The Alarm Circuit
 
-The alarm circuit was very straight forward because we had a the blueprint for it. This was the one part of the circuit that we nailed in the first try. :)
-
-This section of the circuit is the alarm. It uses a 555-timing chip to control the speaker and produce sound of different frequencies.
+The alarm circuit was very straight forward because we had a the schematic for it. This was the one part of the circuit that we nailed in the first try. This section of the circuit is the alarm. It uses a 555-timing chip to control the speaker and produce sound of different frequencies.
 
 <img src="https://media.discordapp.net/attachments/873151746749366315/1351598368702337104/Untitled3.jpg?ex=67daf592&is=67d9a412&hm=3989a007fb21b072711b29981c81ba9da02ef6d24398828d1233363f3c7acdad&=&format=webp&width=1896&height=1423" width="49%" align="left"/> 
 <img src="https://media.discordapp.net/attachments/873151746749366315/1351598369016905850/media3.png?ex=67daf592&is=67d9a412&hm=7b1b2696a80050490082cc8bbe08f2379d862547abd859effd42fc5a1cfec573&=&format=webp&quality=lossless&width=1604&height=1168" width="50%" align="right"/> 
@@ -74,7 +71,7 @@ In the end, there were two issues that we did not have time to fix. Firstly, we 
 ## Robots
 
 Website: Group 10 Week 2 Research Paper
-[Group 10 Week 2 Research Paper](https://onedrive.live.com/edit?id=78FC09600E700DF8!s21db89178007490db51feec076824095&resid=78FC09600E700DF8!s21db89178007490db51feec076824095&cid=78fc09600e700df8&ithint=file%2Cdocx&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3cvYy83OGZjMDk2MDBlNzAwZGY4L0VSZUoyeUVIZ0ExSnRSX3V3SGFDUUpVQktudkpUTWl3dEswRXpOMl9WdFBpVlE_ZT1SYTFLRDk)
+[Group 10 Week 2 Research Paper](/src/images/usc/Group%2010%20Week%202%20Research%20Paper.pdf)
 
 VEXIQ Robot Simulation
 
@@ -104,11 +101,9 @@ void checkDirection () {
     delay(500); 
     distances[1] = getDistanceValue(distanceMM);
 
-    if (distances [0]<=50 && distances [1]<=50) //If both directions are blocked, turn around
-        turnRight(90);
-    else if (distances [0]>=distances [1]) //If left has more space, turn left
-        turnRight(-180);
-        //If right has more space, turn right aka ignore
+    if (distances [0]<=50 && distances [1]<=50) {turnRight(90);} //If both directions are blocked, turn around
+    else if (distances [0]>=distances [1]) {turnRight(-180);}//If left has more space, turn left
+    //If right has more space, turn right aka ignore
 }
 
 task main() { while(true) {
@@ -143,7 +138,7 @@ The Zumi is an AI powered robot which we trained to recognize obstacles and comm
 
 ## Bridges
 
-[Group 10 Week 3 Research Paper](https://onedrive.live.com/edit?id=78FC09600E700DF8!s6266e2155fa94e458d0de1560bd80e29&resid=78FC09600E700DF8!s6266e2155fa94e458d0de1560bd80e29&cid=78fc09600e700df8&ithint=file%2Cdocx&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3cvYy83OGZjMDk2MDBlNzAwZGY4L0VSWGlabUtwWDBWT2pRM2hWZ3ZZRGlrQkV2Y3ozakZXVXc2X1FhSVBieXZsN1E_ZT1wMmRWd2o)
+[Group 10 Week 3 Research Paper](/src/images/usc/Group%2010%20Week%203%20Research%20Paper.pdf)
 
 Friday
 
@@ -151,7 +146,7 @@ we first drew out possible concepts on a whiteboard and removed several designs 
 <img src="https://media.discordapp.net/attachments/873151746749366315/1351599817704607814/media6.jpg?ex=67daf6ec&is=67d9a56c&hm=b6c3be83a4984a14334eeb08e07efe8aadd810a9dd8e3c933f755401ba5c91df&=&format=webp&width=1896&height=1423" width="49%" align="left"/> 
 <img src="https://media.discordapp.net/attachments/873151746749366315/1351599818639937678/media3.jpg?ex=67daf6ec&is=67d9a56c&hm=66550b8cbb4c84b0c2b50ead14fcec66b123803dab5a272a6e6b7e1b5511735a&=&format=webp&width=1066&height=1423" width="24%" align="center"/> 
 
-we had to chose was between cable strung and Pennsylvania / Petit Truss so we setched both options out in 8mm:6in ratio. we choose the petit in the end because we were concerned how well cable strung would work with balsa wood as the cable.
+we had to chose was between cable strung and Pennsylvania / Petit Truss so we schetched both options out in 8mm:6in ratio. we choose the petit in the end because we were concerned how well cable strung would work with balsa wood as the cable.
 
 Weekend
 
@@ -160,7 +155,7 @@ we then designed the bridge in cad (solid works which Alex is used to) to plan o
 <img src="https://media.discordapp.net/attachments/873151746749366315/1351599818182754467/media5.png?ex=67daf6ec&is=67d9a56c&hm=f3f61f397afd990289f3f30d62c59f1c3b0102ab6b6c615617ed574a91186ccb&=&format=webp&quality=lossless&width=1026&height=1421" width="15%" align="left"/> 
 <img src="https://media.discordapp.net/attachments/873151746749366315/1351599819252174848/Untitled.png?ex=67daf6ec&is=67d9a56c&hm=aed66910823742eeee037f545a6970a2a7efe8df715a718a9f2d0797ddb84726&=&format=webp&quality=lossless&width=1978&height=1156" width="40%" align="center"/> 
 
-we then simulated the design using finite element analysis (using ansys) and found out it there exists a weak point in the bridge so we added more supports to it. after that change, the simulation says the bridge should hold 1000N+ however this does not take into account the strength of the wood joints
+we then simulated the design using finite element analysis (using ansys) and found out it there exists a weak point in the bridge so we added more supports to it. after that change, the simulation says the bridge should hold 1000N+ however this does not take into account the strength of the joints.
 
 <img src="https://media.discordapp.net/attachments/873151746749366315/1351599818958700604/Untitled2.jpg?ex=67daf6ec&is=67d9a56c&hm=ff5a8c11afe928d1e14d591d69d77de8cb68aae9b38a5f4cd9bdf6a80ac9da98&=&format=webp&width=2021&height=1312" width="40%" /> 
 
@@ -186,8 +181,8 @@ We didn't consider the height of the bricks after stacking 10-12 of them. If we 
 
 ## Climate Change & Sustainability 
 
-[Group 10 Week 4 Research Paper 1](https://drive.google.com/file/d/1VtdwoJ5PkJLObK8TqaMY4vhw-v95AWA8/view)
-[Group 10 Week 4 Research Paper 2](https://drive.google.com/file/d/1HMCCnmWe4_LSb503nXBff4se0zbXP5Sc/view)
+[Group 10 Week 4 Research Paper 1](/src/images/usc/Group%2010%20Week%204%20Research%20Paper.pdf)
+[Group 10 Week 4 Research Paper 2](/src/images/usc/Group%2010%20Week%204-2%20Research%20Paper.pdf)
 
 The Drone
 

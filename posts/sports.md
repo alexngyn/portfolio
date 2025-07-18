@@ -3,7 +3,7 @@ title: "Journey of Endurance Sporting"
 date: "2025-03-13"
 ---
 
-I'm a endurance athlete and I hope to complete an Ironman sometime before college.
+I'm a endurance athlete and I my goal is to complete an Half-Ironman before I graduate High School and a Full Ironman before I finish College.
 
 # Cross Country 
 
@@ -22,15 +22,14 @@ In 2024, after training for cross country very intensely, I decided to do the 20
 
 # Endurance Cycling 
 
-In 2025, a diffrent friend convinced me to buy a bike to join their group rides as I can improve my VO2 max. I decided why not and I've been on multiple rides with them across southern vietnam, the longest being 120k to Vung Tau.
+In 2025, a different friend convinced me to buy a bike to join their group rides as I can improve my VO2 max. I decided why not and I've been on multiple rides with them across southern vietnam, the longest being 120k to Vung Tau.
 
 # Swimming
 
 I was on the swim team in 2021 but decided to leave as it conflicted with my cross country schedule
-I kept traning with a coach every weekend 
-In 2025, I joined the swim team again to train competiively
+I kept training with a coach every weekend 
+In 2025, I joined the swim team again to prepare me for my first Triathlon
 
 # Triathlon
 
-Now that I was practicing all the sports I told my self, why not do a Triathlon.
-I convinced anouther friend to go to a Olympic Distance race with me in Bau Trang
+Now that I was practicing all the sports I told my self, why not do a Triathlon. I convinced anouther friend to go to a Olympic Distance race with me in Bau Trang in march of 2025 and I finished in 3:40, which was a bit over my goal time. There aren't that many triathlons near me, as both half-ironmans in vietnam require flying there. One I found near me was in August but I had to either do a Spinrt distace or a 70.3, one being to short and one being too long for me. I decided to do the relay for the 70.3 with a couple friends. I made two teams of 3 each which gives us encouragemant of wanting to beat the other team. I was doing the swim. 
