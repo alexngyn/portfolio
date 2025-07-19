@@ -2,6 +2,8 @@
 title: "Composite Bike Storage"
 date: "2025-01-27"
 ---
+import { Image } from 'astro:assets';
+import rocket from '/composite-storage/inside.jpg';
 
 # Bike Storage
 
@@ -28,8 +30,7 @@ I chose to do a wet-layup onto a split 3d printed mould using a guide by [EasyCo
 Since mould was 3d printed, it has layer lines which would leave imperfections onto the final product. So I filled the gaps using filler pull and wet sanded it until smooth. The mould was sprayed with mould release then 3 layers of fiberglass were placed onto each side of the mould, with one half having overhangs which will overlap the other half when closed. We need to apply constant pressure onto the fiberglass so it cures with minimal thickness. A layer of peel ply is placed on the inside of the mould then a layer of breather which allows air to travel across the mould. Then a vacuum bag (I used a clothing vacuum bag) is used with a vacuum pump.
 
 ![Split mould](/composite-storage/split.jpg)
-<Image src="./composite-storage/inside.jpg" width="50%"/> 
-<img src="/src/images/composite-storage/breather.jpg" width="50%"/> 
+<Image src={rocket} alt="A rocketship in space." />
 <img src="/src/images/composite-storage/suction.jpg" width="50%"/> 
 
 An issue I encountered was the clothing vacuum bag was too small so I had to join two bags together using VHB tape. As expected this bag did not hold the best seal and idealy I would find a bigger bag but I was on a time crunch so I had to deal with it. The pump couldn't run for 24 hours as it would overheat so every couple hours I ran it for a bit.
