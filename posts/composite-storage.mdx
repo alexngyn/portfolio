@@ -3,7 +3,14 @@ title: "Composite Bike Storage"
 date: "2025-01-27"
 ---
 import { Image } from 'astro:assets';
-import inside from '../src/images/composite-storage/inside.jpg';
+import insideImage from '../src/images/composite-storage/inside.jpg';
+import scanImage from '../src/images/composite-storage/3d-scan.png';
+import insideBoxImage from '../src/images/composite-storage/insidebox.jpg';
+import renderImage from '../src/images/composite-storage/render.png';
+import splitImage from '../src/images/composite-storage/split.jpg';
+import suctionImage from '../src/images/composite-storage/suction.jpg';
+import openImage from '../src/images/composite-storage/open.jpg';
+import mountedImage from '../src/images/composite-storage/mounted.jpg';
 
 # Bike Storage
 
@@ -18,27 +25,27 @@ My criteria for this project was it has to be:
 
 For my initial prototype, I used PolyCam to make a scan of my bike and I designed my box around that. To test out the dimensions, I 3d printed a test fit. 
 
-<Image src="/src/images/composite-storage/3d-scan.png" alt="3D scan" sizes="50vw" style="width: 50%; height: auto;" />
-<Image src="/src/images/composite-storage/insidebox.jpg" alt="Inside box" sizes="50vw" style="width: 50%; height: auto;" />
+<Image src={scanImage} alt="3D scan" sizes="50vw" style="width: 50%; height: auto;" />
+<Image src={insideBoxImage} alt="Inside box" sizes="50vw" style="width: 50%; height: auto;" />
 
 In order to make the box very light, I wanted to use composites as they have very high strength to weight ratio. My inspiration for this was race cars as many use carbon fiber although the twill alone costs more than my budget so this would not meet my criteria. I ended up choosing fiberglass which is weaker than carbon fiber but significantly cheaper. 
 
-<Image src="/src/images/composite-storage/render.png" alt="Render" sizes="50vw" style="width: 50%; height: auto;" />
+<Image src={renderImage} alt="Render" sizes="50vw" style="width: 50%; height: auto;" />
 
 I chose to do a wet-layup onto a split 3d printed mould using a guide by [EasyComposites](https://www.easycomposites.co.uk/learning/carbon-fibre-part-from-3d-printed-mould) as it is relatively inexpensive to the other options and does not require an autoclave.
 
 Since mould was 3d printed, it has layer lines which would leave imperfections onto the final product. So I filled the gaps using filler pull and wet sanded it until smooth. The mould was sprayed with mould release then 3 layers of fiberglass were placed onto each side of the mould, with one half having overhangs which will overlap the other half when closed. We need to apply constant pressure onto the fiberglass so it cures with minimal thickness. A layer of peel ply is placed on the inside of the mould then a layer of breather which allows air to travel across the mould. Then a vacuum bag (I used a clothing vacuum bag) is used with a vacuum pump.
 
-<Image src="/composite-storage/split.jpg" alt="Split mould" sizes="50vw" style="width: 50%; height: auto;" />
-<Image src={inside} alt="inside" sizes="50vw" style="width: 50%; height: auto;" />
-<Image src="/src/images/composite-storage/suction.jpg" alt="Vacuum bag" sizes="50vw" style="width: 50%; height: auto;" />
+<Image src={splitImage} alt="Split mould" sizes="50vw" style="width: 50%; height: auto;" />
+<Image src={insideImage} alt="inside" sizes="50vw" style="width: 50%; height: auto;" />
+<Image src={suctionImage} alt="Vacuum bag" sizes="50vw" style="width: 50%; height: auto;" />
 
 An issue I encountered was the clothing vacuum bag was too small so I had to join two bags together using VHB tape. As expected this bag did not hold the best seal and idealy I would find a bigger bag but I was on a time crunch so I had to deal with it. The pump couldn't run for 24 hours as it would overheat so every couple hours I ran it for a bit.
 
 When opening the mould, the epoxy held the mould together very well so it was very hard to open. I ended up opening it forcefully. The result didn't look great and had a lot of imperfection, mainly being discoloration and lack of resin. To the holes caused by lack of resign, I painted on an extra layer resin to make sure it was water proof. Then I spray painted the box white to hide the discoloration. 
 
-<Image src="/src/images/composite-storage/open.jpg" alt="Open mould" sizes="50vw" style="width: 50%; height: auto;" />
-<Image src="/src/images/composite-storage/mounted.jpg" alt="Mounted box" sizes="50vw" style="width: 50%; height: auto;" />
+<Image src={openImage} alt="Open mould" sizes="50vw" style="width: 50%; height: auto;" />
+<Image src={mountedImage} alt="Mounted box" sizes="50vw" style="width: 50%; height: auto;" />
 
 Reflection
 
