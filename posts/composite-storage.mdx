@@ -3,15 +3,7 @@ title: "Composite Bike Storage"
 date: "2025-01-27"
 ---
 import { Image } from 'astro:assets';
-import 3d-scan. from '../src/images/composite-storage/3d-scan.png';
-import breather from '../src/images/composite-storage/breather.jpg';
 import inside from '../src/images/composite-storage/inside.jpg';
-import insidebox from '../src/images/composite-storage/insidebox.jpg';
-import mounted from '../src/images/composite-storage/mounted.jpg';
-import open from '../src/images/composite-storage/open.jpg';
-import render from '../src/images/composite-storage/render.png';
-import split from '../src/images/composite-storage/split.jpg';
-import suction from '../src/images/composite-storage/suction.jpg';
 
 # Bike Storage
 
@@ -26,27 +18,28 @@ My criteria for this project was it has to be:
 
 For my initial prototype, I used PolyCam to make a scan of my bike and I designed my box around that. To test out the dimensions, I 3d printed a test fit. 
 
-<Image src={3d-scan} alt="3d-scan" sizes="50vw" style="width: 50%; height: auto;" />
-<Image src={insidebox} alt="insidebox" sizes="50vw" style="width: 50%; height: auto;" />
+<img src="/src/images/composite-storage/3d-scan.png" width="50%"/> 
+<img src="/src/images/composite-storage/insidebox.jpg" width="50%"/> 
 
 In order to make the box very light, I wanted to use composites as they have very high strength to weight ratio. My inspiration for this was race cars as many use carbon fiber although the twill alone costs more than my budget so this would not meet my criteria. I ended up choosing fiberglass which is weaker than carbon fiber but significantly cheaper. 
 
-<Image src={render} alt="render" sizes="50vw" style="width: 50%; height: auto;" />
+<img src="/src/images/composite-storage/render.png" width="50%"/> 
 
 I chose to do a wet-layup onto a split 3d printed mould using a guide by [EasyComposites](https://www.easycomposites.co.uk/learning/carbon-fibre-part-from-3d-printed-mould) as it is relatively inexpensive to the other options and does not require an autoclave.
 
 Since mould was 3d printed, it has layer lines which would leave imperfections onto the final product. So I filled the gaps using filler pull and wet sanded it until smooth. The mould was sprayed with mould release then 3 layers of fiberglass were placed onto each side of the mould, with one half having overhangs which will overlap the other half when closed. We need to apply constant pressure onto the fiberglass so it cures with minimal thickness. A layer of peel ply is placed on the inside of the mould then a layer of breather which allows air to travel across the mould. Then a vacuum bag (I used a clothing vacuum bag) is used with a vacuum pump.
 
 ![Split mould](/composite-storage/split.jpg)
-<Image src={inside} alt="inside" sizes="50vw" style="width: 50%; height: auto;" />
-<Image src={suction} alt="suction" sizes="50vw" style="width: 50%; height: auto;" />
+<Image src={rocket} alt="Descriptive alt text" sizes="50vw" style="width: 50%; height: auto;" />
+
+<img src="/src/images/composite-storage/suction.jpg" width="50%"/> 
 
 An issue I encountered was the clothing vacuum bag was too small so I had to join two bags together using VHB tape. As expected this bag did not hold the best seal and idealy I would find a bigger bag but I was on a time crunch so I had to deal with it. The pump couldn't run for 24 hours as it would overheat so every couple hours I ran it for a bit.
 
 When opening the mould, the epoxy held the mould together very well so it was very hard to open. I ended up opening it forcefully. The result didn't look great and had a lot of imperfection, mainly being discoloration and lack of resin. To the holes caused by lack of resign, I painted on an extra layer resin to make sure it was water proof. Then I spray painted the box white to hide the discoloration. 
 
-<Image src={open} alt="open" sizes="50vw" style="width: 50%; height: auto;" />
-<Image src={mounted} alt="mounted" sizes="50vw" style="width: 50%; height: auto;" />
+<img src="/src/images/composite-storage/open.jpg" width="50%"/> 
+<img src="/src/images/composite-storage/mounted.jpg" width="50%"/> 
 
 Reflection
 
