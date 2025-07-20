@@ -3,76 +3,119 @@ title: "Vex Robotics - 2023"
 date: "2023-04-27"
 ---
 
-Vex is a robotics competion where robots compete 2v2 to complete a objective such as shooting a disk into a goal in order to get points.
-I joined quite late in the season, starting in December instead of April however was able to learn quickly. 
+import { Image } from 'astro:assets';
+import ISO from '../src/images/vex/2023/Iso.png';
+import NationalsRender from '../src/images/vex/2023/nationals-render.png';
+import Nationals from '../src/images/vex/2023/nationals.jpg';
+import ShootIndexerRender from '../src/images/vex/2023/shootindexer-render.jpg';
+import SkillsRender from '../src/images/vex/2023/skills-render.png';
+import Skills from '../src/images/vex/2023/skills.jpg';
+import Worlds from '../src/images/vex/2023/worlds.webp';
+import WorldsTeam from '../src/images/vex/2023/worlds-team.jpg';
+import WorldsDome from '../src/images/vex/2023/worlds-dome.jpg';
+
+> VEX Robotics is a global competition where teams design, build and program robots to compete in team-based engineering challenges. Each season features a new game that tests strategy, innovation, and collaboration, encouraging creativity and real-world problem-solving through STEM. 
+
+<div style="display: flex; align-items: center; gap: 1rem;">
+    <Image src={ISO} alt="Isometric Field" sizes="40vw" style="width: 40%; height: auto;" />
+    <div style="flex: 1;">
+        <p>
+            This season's challenge is called Spin Up, which is played on a 12’x12’ square field. Two Alliances of two compete in matches consisting of a Autonomous Period, followed by Driver Controlled Period. The objective of the game is to attain a higher score than the opposing Alliance by Scoring Discs in Goals, Owning Rollers, and Covering field tiles at the end of the Match.
+        </p>
+    </div>
+</div>
+
+I had an interest in Vex Robotics for a while as I saw High Schoolers participate. This year I decided to found the first middle school team of Vietnam. We started  later in the season than most teams but we quickly adapted and learned the fundamentals of robot design and strategy.
+
+## **Version 1 (Nationals)**
+
+One key tool I learnt was Computer-Aided Design (CAD); It is a digital method of planning and designing the robot, by creating 3D models, we can visualize how different parts fit together and ensure proper functionality. I designed our first robot throughout my winter break using Autodesk Inventor as it has lots of documentation for how to use Vex parts with it. I made multiple different 3d designs based on some paper skeches. For my first robot, I decided to go simple with just a drivetrain and roller as I knew I didn't have much time to build and I don't have much experience.
+
+<div style="display: flex; gap: 1rem;">
+  <Image src={NationalsRender} alt="Nationals Render" sizes="45vw" style="width: 45%; height: auto; object-fit: cover;" />
+  <Image src={Nationals} alt="Nationals Bot" sizes="55vw" style="width: 55%; height: auto; object-fit: cover;" />
+</div>
+
+For the code, we used C++ as it is better documented than python for VEX. The code isn't very complicated as I wanted to test if the robot works first, and I can learn about more advance algorithms later. The autonomous moves forward by 200mm which places it in between 4 tiles, which gives me an easy 12 points.
+
+```cpp
+void move() {
+  double vs = Controller1.Axis2.position(), hs = Controller1.Axis4.position() * 0.9, ls, rs;
+  if (hs < 0) {ls = vs, rs = vs + fabs(hs);} else if (hs > 0) {rs = vs, ls = vs + fabs(hs);} else {ls = vs, rs = vs;}
+  if (ls > 100) {rs -= (ls - 100),ls -= (ls - 100);} else if (rs > 100) {ls -= (rs - 100),rs -= (rs - 100);};
+  mgr.setVelocity(ls,percent);
+  mgl.setVelocity(rs,percent);
+}
+
+void roller() {
+  if (Controller1.ButtonR2.pressing()) { Motor7.spinFor(forward, 180, degrees); }
+  if (Controller1.ButtonL2.pressing()) { Motor7.spinFor(reverse, 180, degrees); }
+}
+
+void move(double left, double right) {
+  mgl.spinFor(forward, left/319.186, turns, false);
+  mgr.spinFor(forward, right/319.186, turns, false);
+}
+
+void autonomous(void) {
+  move(200,200);
+}
+
+void usercontrol(void) {
+  while (true) {
+    move();
+    roller();
+    wait(5, msec);
+  }
+}
+```
+
+At nationals, I was the only team with 6 motors for my drivetrain, with most only having 4, which gave me the advantage of pushing power. My strategy of the event was to focus on scoring on the rollers and protecting that area. In the evening in elimination matches, I chose to alliance with a good offensive bot that also compliments my strategy and we got to semi-finals. 
+
+For this event I got the Excellence Award which qualifies my to World Championships. The award considers performance in the event, our engineering notebook, and our interview. 
+
+## **Version 2 (Skills)**
+
+Following nationals, we wanted to focus on making a shooter to score on the high goal. We 3d-designed than started building. Our school had a skills challenge where we try to score as much points as we can in a minute without an opponent on the field. My autonomous only scored the 12 points and my driver control scored 52 points. I could have gotten much higher if I had a shooter but we didn't finish building it in time.
+
+<div style="display: flex; gap: 1rem;">
+  <Image src={SkillsRender} alt="Skills Render" sizes="45vw" style="width: 45%; height: auto; object-fit: cover;" />
+  <Image src={Skills} alt="Skills Bot" sizes="55vw" style="width: 55%; height: auto; object-fit: cover;" />
+</div>
 
 
-We used GitHub to keep track of all our code [Code Base](https://github.com/alexngyn/VRC-SPIN-UP/)
+## **Version 3 (Worlds)**
 
-## Version 1 (Nationals)
-<img src="https://github.com/alexngyn/VRC-SPIN-UP/blob/main/Documentation/Photos/WIN_20230209_17_56_30_Pro.jpg?raw=true" width="50%" alt="photo"/>
-<img src="https://github.com/alexngyn/VRC-SPIN-UP/blob/main/Documentation/Renders/national-render.png?raw=true" width="40%" alt="render"/>
+After the skills challenge, we focused on completing the shooter, adding an indexer so the robot can shoot the rings one at a time, and a string based expansion mechanism. We also added a ABS skirt which protects the side of the robot and is also for decoration.
 
-This robot was used to compete in nationals, it used six motors to go fast but I relized the gear ratios was decreasing the speed.
+<div style="display: flex; gap: 1rem;">
+  <Image src={ShootIndexerRender} alt="ShootIndexerRender" sizes="45vw" style="width: 45%; height: auto; object-fit: cover;" />
+  <Image src={Worlds} alt="Worlds Bot" sizes="55vw" style="width: 55%; height: auto; aspect-ratio: 1 / 0.9; object-fit: cover;" />
+</div>
 
-Even though I did not have a very good robot, my robot was very good at defence as I was the only one to use 6 motors for my drivetrain (limit of 8) so I could push other robots easily. I made a allience with a good offencive robot and we got to semi finals. However the critera for worlds also conciders docuemnataion, notebook, and intervew which I won overall. 
+For the programming, our biggest challenge was aiming the shooter accurately during autonomous control. We solved this by calculating projectile motion using [this Google Colaboratory](https://colab.research.google.com/drive/1ZDqA7VL2sX8HjGgLV1grBOFcIxxB_T2S?usp=sharing).
 
-## Version 2 (Skills)
-<img src="https://github.com/alexngyn/VRC-SPIN-UP/blob/main/Documentation/Photos/skills.jpg?raw=true" width="30%" alt="photo"/>
-<img src="https://github.com/alexngyn/VRC-SPIN-UP/blob/main/Documentation/Renders/skills.png?raw=true" width="50%" alt="render"/>
+World didn't go very well as we encountered multiple challenges. Our drivetrain fell apart often as the collar lock design we used wasn't very secure and required often retightening. We also got stuck on disks multiple times, our expansion got stuck multiple times, and the indexer broke multiple times. Overall it didn't go as planned however it was a good learning lesson for future events.
 
-This is the rebuild right before a skills challenge, where each team tries to get as many points as possible with no other team on the field, the autonomous was quite incosistant and the shooter was not working but we learnt what we still need to work on.
+<div style="display: flex; gap: 1rem;">
+  <Image src={WorldsDome} alt="Worlds Dome" sizes="55vw" style="width: 55%; height: auto; object-fit: cover;" />
+  <Image src={WorldsTeam} alt="Worlds Team" sizes="45vw" style="width: 45%; height: auto; object-fit: cover;" />
+</div>
 
-## Projectile Motion
+Next year, I will focus on reliability of my robot. I will test a lot before my competition and I will learn new building techniques to ensure structural integrity and reliability.
 
-We added a file projectile_motion.ipynb to this repository since we need it for the calculation of our disk path. But you can have a look at it in a [copy in Google Colaboratory](https://colab.research.google.com/drive/1ZDqA7VL2sX8HjGgLV1grBOFcIxxB_T2S?usp=sharing) too.
+## **Virtual Programming Skills**
 
-## Version 3 (Worlds)
-<img src="https://github.com/alexngyn/VRC-SPIN-UP/blob/main/Documentation/Renders/shoot+indexer.jpg?raw=true" width="49%" alt="render"/>
-<img src="https://media.discordapp.net/attachments/873151746749366315/1351594143796957305/IMG_1828.jpg?ex=67daf1a3&is=67d9a023&hm=40e56b211f15460fb800d545aba4238696dbdddd4529237f377baa2ed953294b&=&format=webp&width=1067&height=1423" width="49%" align="right"/>
+Throughout the season, I also partook in a Virtual Challenge where we have to program a virtual robot to score as many point as possible in a minute.
 
-This is our final iteration, we added expansion, a indexer, and skirts.
+<div style="display: flex; align-items: center; gap: 1rem;">
+    <img src="https://github.com/alexngyn/VRC-SPIN-UP/blob/main/Documentation/Code/322.png?raw=true" width="38%" alt="322 Points"/>
+    <div style="flex: 1;">
+        <p>
+            After many attempts and improvements to my code over a couple weeks, I was able to reach 322 points which is the theoretical maximum for this challenge. The main things that helped me save was by barely picking a disc up while also using gps (game position system) to ensure consistency.
+        </p>
+    </div>
+</div>
 
-World was quite bad because we got stuck on disks multiple times, expansion got stuck multiple time, and indexer broke multiple times.
 
-<img src="https://media.licdn.com/dms/image/v2/D4E2DAQFUJDlaSZyE0Q/profile-treasury-image-shrink_800_800/B4EZU4Z4_rHMAg-/0/1740408067271?e=1742918400&v=beta&t=CLvD_n6PQWY4cG6Evfmw50Yj0BbrVFJd4yqtJGQmbho" width="400" alt="render"/>
-
-## Virtual Programming Skills
-
-There is also a virtual challenge where you program a virtual robot.
-
-### Attempt 1:
-
-<img src="https://github.com/alexngyn/VRC-SPIN-UP/blob/main/Documentation/Code/72.png?raw=true" width="400" alt="67 Points"/>
-
-67 points, not bad for a first try. Preload of 2 and starting position of E. I could just repeat what I'm doing untill the timer is done but the code currently is massively long and inefficent.
-
-### Atempt 2
-
-So I did what I said I wouldn't do. I just repeated what I did in Attempt 1. Good score though. 207.
-
-### Attempt 3:
-
-<img src="https://github.com/alexngyn/VRC-SPIN-UP/blob/main/Documentation/Code/322.png?raw=true" width="400" alt="322 Points"/>
-
-I got a bit carried away, I found out that one of the ways the save time is by barely picking a disc up while using gps to allow for more consistency.
-
-![world standing](https://github.com/vex-ssis/2023/raw/main/docs/2023-03-27.png?raw=true)
-
-## Computer-Aided Design 
-
-Computer-Aided Design (CAD) is a online method of planning out the robot, by creating 3D models, they can visualize how different parts fit together and ensure proper functionality. 
-
-### initial
-
-I learnt Cad for VEX during the winter break of 2022. I used Autodesk Inventor as it has lots of documentation for how to use vex parts with it. I was able to make many basic cads that helped me and i learnt alot of new things along the way. 
-
-<img src="https://github.com/alexngyn/VRC-SPIN-UP/raw/main/Documentation/Renders/national-render.png?raw=true" width="50%"/>
-
-## Reflection:
-
-We didn't do so well although learnt a lot this season. most important thing i learnt is use loctite. next year i will be joining [1599V](https://github.com/flooof/1599V-VRC) and lets hope i do better.
-
-After this I learnt to test alot before the competion and to use various methods to ensure reliabilty
-I would also use stronger materials such as polycarbonate instead of abs and do stress simulations to test if it will break (talked about in cad with vex)
-Lastly I learnt about using loctite and nylock to make sure a screw will never come loose
+<img src="https://github.com/vex-ssis/2023/raw/main/docs/2023-03-27.png?raw=true" width="100%" alt="world standing" />
