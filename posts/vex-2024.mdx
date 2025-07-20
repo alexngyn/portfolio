@@ -3,64 +3,103 @@ title: "Vex Robotics - 2024"
 date: "2024-02-24"
 ---
 
-<img src="https://github.com/vex-ssis/2024/blob/main/assets/OverUnder.png?raw=true" align="right" width="40%"/>
+import { Image } from 'astro:assets';
+import ISO from '../src/images/vex/2024/Iso.png';
+import Scrim from '../src/images/vex/2024/scrim.jpg';
+import Formosa from '../src/images/vex/2024/formosa.jpg';
+import Fulbright from '../src/images/vex/2024/fulbright.png';
+import FulbrightBlocker from '../src/images/vex/2024/fulbright-blocker.jpg';
+import HanoiBot from '../src/images/vex/2024/hanoi.jpg';
+import HanoiAward from '../src/images/vex/2024/hanoi-award.jpg';
+import HanoiBlocker from '../src/images/vex/2024/hanoi-blocker.jpg';
+import Controller from '../src/images/vex/2024/controller.jpg';
+import FinalRender from '../src/images/vex/2024/final.jpg';
+import FinalRenderZoomed from '../src/images/vex/2024/final-zoomed.jpg';
+import Sled from '../src/images/vex/2024/sled.png';
+import NationalsBot from '../src/images/vex/2024/nationals.jpg';
+import NationalsAward from '../src/images/vex/2024/nationals-award.webp';
 
-SSIS Robotics in [this years](https://github.com/vex-ssis/2024) "Over Under" VEX competition 2023-2024. Big changes for Vietnam! The general team number for SSIS changed from 76209 to 1599.
+> VEX Robotics is a global competition where teams design, build and program robots to compete in team-based engineering challenges. Each season features a new game that tests strategy, innovation, and collaboration, encouraging creativity and real-world problem-solving through STEM. 
+
+<div style="display: flex; align-items: center; gap: 1rem;">
+    <Image src={ISO} alt="Isometric Field" sizes="35vw" style="width: 35%; height: auto;" />
+    <div style="flex: 1;">
+        <p>
+            This season's challenge is called Over Under, which is played on a 12’x12’ square field. Two Alliances of two compete in matches consisting of a Autonomous Period, followed by Driver Controlled Period. The objective of the game is to attain a higher score than the opposing Alliance by Scoring Triballs in Goals and by Elevating at the end of the Match.
+        </p>
+    </div>
+</div>
 
 ## Scrimmage
 
-We did not do well because the low bot design restricts a good catapult and also we had to do a two motor catapult and did not have a effective pnumatic intake either. Cool RGB thou.
+For our first robot, we wanted to create a very low bot that can go inside of the goal and descore. Our biggest issue with this design was that it restricts the catapult shooter so we are not able to score well. One thing we experimented with was using RGB for decoration and we though it looked very cool.
 
-<img src="https://media.licdn.com/dms/image/v2/D4E2DAQEuXcaWiK4a6A/profile-treasury-image-shrink_1280_1280/B4EZU4ZYFAHgAQ-/0/1740407938633?e=1742918400&v=beta&t=wtoli2uJ7M6i04VDPLodLDwMP0LyOsR1Oc4OksWVd9s" width="40%"/>
+<div style="display: flex; gap: 1rem;">
+  <Image src={Scrim} alt="Scrim Bot" sizes="50vw" style="width: 50%; height: auto; object-fit: cover;" />
+  <img src="https://github.com/alexngyn/1599V-VRC-OVER-UNDER/blob/main/media/dt.9.png?raw=true" width="50%"/>
+</div>
 
 ## Formosa at TAS (Taipei)
 
-We did okay, 18th out of 32. better than expected. main issue was that we needed more pactice
+<div style="display: flex; align-items: center; gap: 1rem;">
+    <Image src={Formosa} alt="Formosa" sizes="20vw" style="width: 20%; height: auto; object-fit: cover;" />
+    <div style="flex: 1;">
+        <p>
+            After our first scrimmage, we did a complete rebuild so without the restrictions of a low bot. We went to a scrimmage in Taipei for practice and our robot did better than expected given the short build time, 18th out of 36. Our next steps would be to practice driving more and continue programming autonomous.
+        </p>
+    </div>
+</div>
 
 ## Fulbright Scrimmage
 
-This was a event organized by [STEAM for Vietnam](https://steamforvietnam.org/) and **15 teams** showed up [to this event](https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-23-4188.html). 
+After Formosa, we experimented with the idea of a block which prevents the other team from shooting triballs. Additionally, we designed a balancing mechanism that allows the robot to balance on the poles in the middle (show on the right) without contacting the tiles.
 
-The ref did not read the rule book (SF 2-2 we should have won). 
+<div style="display: flex; gap: 1rem;">
+  <Image src={FulbrightBlocker} alt="Fulbright Blocker" sizes="40vw" style="width: 40%; height: auto; object-fit: cover;" />
+  <Image src={Fulbright} alt="Fulbright" sizes="6vw" style="width: 60%; height: auto; object-fit: cover;" />
+</div>
 
 ## Northern Nationals
 
-The [first qualifying event](https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-23-4992.html#general-info) of the season. But only team 36070M from team **11** qualified by winning the Excellence Award. At least [team 1599V](https://www.robotevents.com/teams/V5RC/1599V) (not Vector but Vietnamese Banana Farmers) got the Judges Award. **33 teams** met in Hanoi!
+Before Northern Nationals, we extended our blocker to be double stage, to reach high up as we saw some robot had elevated shooters. We also added back our old RGB and painted our controller yellow to match our team colors. Additionally some renders of our robot for marketing. We wanted to print this as a tall poster, a challenge we had was pixelation so we had to render this at 20k. At the event, we lost a lot of matches due to strategic issues however we still received Judges Award. And most importantly, we had fun! This was a interesting event as almost our whole robotics club of 60 flew to Hanoi and we had a lot of shenanigans.
 
-going to a abroad event with 50 robotics kids is so fun as we had a lot of shenanigans
+<div style="display: flex; gap: 1rem;">
+  <Image src={HanoiBlocker} alt="Hanoi" sizes="35vw" style="width: 35%; height: auto; object-fit: cover;" />
+  <Image src={HanoiBot} alt="Hanoi" sizes="35vw" style="width: 35%; height: auto; object-fit: cover;" />
+  <Image src={Controller} alt="Hanoi" sizes="35vw" style="width: 35%; height: auto; object-fit: cover;" />
+  <Image src={HanoiAward} alt="Hanoi" sizes="80vw" style="width: 40%; height: auto; object-fit: cover;" />
+</div>
 
-## Southern Region - Vietnam VEX Robotics Championship 2024/02/24
+<div style="display: flex; gap: 1rem;">
+  <Image src={FinalRender} alt="Final Render" sizes="40vw" style="width: 40%; height: auto; object-fit: cover;" />
+  <Image src={FinalRenderZoomed} alt="Final Render Zoomed" sizes="60vw" style="width: 60%; height: auto; object-fit: cover;" />
+</div>
 
-The [big event at SSIS](https://www.robotevents.com/robot-competitions/vex-robotics-competition/RE-VRC-23-5194.html#general-info): with a new record of **34 teams** there was a fierce but friendly competition in the HS gym. And SSIS had a full of 8 teams competing! And while SSIS did well getting 3 of the 6 available awards (Tournament Champions for 1599V, Design Award for 1599V and Judges Award for 1599R) the two qualifying awards for VEX World went to 36070F PENN MÌ Ý and 36070A PENN APPLE JUICE. More success next year!
 
-In the morning we had a big issue, our batteries were broken and somtimes would cut out, we asked around but could not borrow any so were forced to play with the broken batteries. Our robot turned off mid match for all of our morning matches making us lose all. In the afternoon we won all our matches because we were able to ask anouther school and then we won finals too. Unfororanatly the requirement for the worlds qualification has a minimum amount of wins that day so we did not get it. We were the only team with a score of 25/25 on our documentaion and interview so we got the design award and I think that everyone including the other teams think we deserve the qualification but we didnt get it :(
+## Southern Regionals
 
-<img src="https://media.licdn.com/dms/image/v2/D4E2DAQGehsHdf9BSjA/profile-treasury-image-shrink_800_800/B4EZU4Ze6nHMAc-/0/1740407965547?e=1742918400&v=beta&t=j_us3CleoaDZyYJF7m3r7oMNKdTUN4TdhnSyPy9rT58" width="40%"/>
+One ability we lacked at hanoi was crossing over the middle beam which would save us time. We solved this with a sled which is a sloped piece of polycarbonate on each side of the robot. We made it one big piece for aesthetical purposes. To ensure rigidity, we did many simulations in order to calculate how many layers we needed and what shapes were most optimal. 
 
-## Computer-Aided Design 
+<div style="display: flex; gap: 1rem;">
+  <Image src={Sled} alt="Sled Simulation" sizes="50vw" style="width: 50%; height: auto; object-fit: cover;" />
+  <Image src={NationalsBot} alt="Nationals Bot" sizes="50vw" style="width: 50%; height: auto; aspect-ratio: 1 / 0.9; object-fit: cover;" />
+</div>
 
-Computer-Aided Design (CAD) is a online method of planning out the robot, by creating 3D models, they can visualize how different parts fit together and ensure proper functionality. 
+During the morning of the event, we had a big issue, our batteries were broken and sometimes would cut out, we were not able to borrow any so we were forced to play with the broken batteries. Our robot turned off mid match for most of our morning matches making us lose all. In the afternoon we allianced with a team and was able to borrow batteries from them. We ended up winning all our matches after that, including finals, making us Tournament Champions. In addition we also got the design award for having the best documentation and interview. Due to our performance issues in the morning however, we were not able to qualify to get the Excellence award which qualifies to World Championships.
 
-### advanced rendering
-
-during the fall of 2023, i started to look into more advanced rendering teqniques, mainly for media. I learnt about lighting, angles, and other techniques.
-
-<img src="https://github.com/alexngyn/1599V-VRC-OVER-UNDER/blob/main/media/dt.9.png?raw=true" width="50%"/>
-
-### poster
-
-in jan we did a render with our new block to show the height of it, we then printed as a poster, a challenge we had was pixelation as the poster was very big so we did this render in 20k. 
-
-<img src="https://raw.githubusercontent.com/alexngyn/1599V-VRC-OVER-UNDER/refs/heads/main/media/final.20.jpg?raw=true" width="50%"/>
-<img src="/vex/finalzoomed.jpg" width="50%"/>
-
-### simulation
-
-In feb we wanted a big piece of polycarbonate to act as a sled to go over a obsticale and we did many simulations in order to calculate how many layers we needed and what shapes were most oplimal. 
-
-<img src="https://github.com/alexngyn/1599V-VRC-OVER-UNDER/blob/main/media/front-150.png?raw=true" width="50%"/>
+<Image src={NationalsAward} alt="Nationals Award" sizes="100vw" style="width: 100%; height: auto; object-fit: cover;" />
 
 ## Code
 
+Throughout the year, we learnt and tested new motion control algorithms such as PID controller, Pure Pursuit, and Odometry.
+
 At the end of the season, we post our code publicly such that other teams can take inspiration and learn from us.
 [Code Base](https://github.com/alexngyn/1599V-VRC-OVER-UNDER/)
+
+https://github.com/alexngyn/1599V-VRC-OVER-UNDER/
+
+## Notebook
+
+We also document our build throughout the year which is one of the criteria of the Excellence Award. We write it on paper and [here](https://1599v.netlify.app/2024) is a scan of our notebook.
+
+https://1599v.netlify.app/2024
